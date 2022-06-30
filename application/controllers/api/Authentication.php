@@ -66,8 +66,8 @@ class Authentication extends REST_Controller {
                     }
                 }
 
-                // $otp = rand(1111,9999);
-                $otp = 1234;
+                $otp = rand(1111,9999);
+                // $otp = 1234;
                 $send_otp = json_decode($this->send_otp($phone, $otp), true);
                 
                 if($send_otp['Status'] == 'Success'){
@@ -248,7 +248,7 @@ class Authentication extends REST_Controller {
 
     public function send_otp($phone, $otp)
     {
-        return json_encode(array('Status'=>'Success', 'Details'=>'mydemosession'));
+        // return json_encode(array('Status'=>'Success', 'Details'=>'mydemosession'));
         
         $curl = curl_init();
         
@@ -280,7 +280,7 @@ class Authentication extends REST_Controller {
     }
 
     public function verify_otp($session_details, $otp){
-        return json_encode(array('Status'=>'Success', 'Details'=>'OTP Matched.'));
+        // return json_encode(array('Status'=>'Success', 'Details'=>'OTP Matched.'));
 
         $curl = curl_init();
 
